@@ -1,228 +1,310 @@
-# 💰 Expense Tracker App with AI Chatbot Assistant
+# 💰 Expense Tracker - Full Stack Application
 
-A full-stack expense tracking application with an integrated AI-powered finance assistant that helps you track spending, manage budgets, and get personalized financial advice through natural conversation.
+A comprehensive expense tracking application built with modern web technologies. Track your expenses, manage budgets, set savings goals, and get AI-powered insights.
 
-**✨ Now featuring a modern UI built with Tailwind CSS!** — Beautiful gradients, smooth animations, and fully responsive design. See [UI_FEATURES.md](./UI_FEATURES.md) for details.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)
+![React](https://img.shields.io/badge/react-18.2.0-blue.svg)
 
----
+## 🌟 Features
 
-## 🚀 Features
+### Core Features
+- ✅ **Expense & Income Tracking** - Add, edit, delete transactions with categories
+- 📊 **Visual Analytics** - Beautiful pie charts and bar graphs with dark color themes
+- 💵 **Budget Management** - Set monthly/weekly budgets and track spending
+- 🎯 **Savings Goals** - Create and monitor savings goals with progress tracking
+- 🤖 **AI Assistant** - Get intelligent insights about your spending habits
+- 🔔 **Smart Alerts** - Real-time notifications with sound when budget limits are reached
+- 🌍 **Multi-Currency** - Support for 18+ currencies worldwide
+- 🎨 **Theme Customization** - Light/Dark/Auto themes with custom color schemes
 
-### 🧾 Core Features
-- **Expense & Income Management**: Record and categorize transactions
-- **Budget Tracking**: Set monthly/weekly budgets with alerts
-- **Analytics Dashboard**: View spending summaries and trends
-- **AI Chatbot Assistant**: Get real-time financial insights and advice
-  - Natural language queries like "How much did I spend on food this month?"
-  - Data-driven responses based on your actual transactions
-  - Personalized saving tips and recommendations
-  - Budget alerts and spending pattern analysis
-
-### 🤖 AI Chatbot Capabilities
-The integrated assistant can:
-- Answer spending queries using your real transaction data
-- Identify your biggest expense categories
-- Provide spending summaries and trends
-- Offer personalized financial advice (when OpenAI API key is configured)
-- Help you understand and improve your spending habits
-
----
+### UI/UX Features
+- 🚀 **Beautiful Landing Page** - Modern, animated landing page with:
+  - Animated stats that swap positions
+  - Color-changing effects
+  - Smooth fade-in animations
+  - Interactive hover effects
+  - Comprehensive FAQ section
+- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
+- ⚡ **Real-time Updates** - Auto-refresh for budget calculations
+- 🎯 **Intuitive Navigation** - Clean and user-friendly interface
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Frontend** | React.js (Vite) | Responsive UI and chatbot interface |
-| **Styling** | Tailwind CSS | Modern, gradient-based design system |
-| **Backend** | Node.js + Express | REST API and business logic |
-| **Database** | MongoDB | Store users, transactions, budgets |
-| **Charts** | Recharts | Visualize spending patterns |
-| **AI** | OpenAI GPT (optional) | Enhanced chatbot responses |
-| **Auth** | JWT + bcryptjs | Secure authentication |
+### Frontend
+- **React 18** - Modern UI library
+- **Vite** - Lightning-fast build tool
+- **Tailwind CSS** - Utility-first CSS framework
+- **Recharts** - Beautiful, responsive charts
+- **Axios** - HTTP client for API calls
 
----
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express** - Web application framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB object modeling
+- **bcryptjs** - Password hashing
+- **jsonwebtoken** - JWT authentication
 
-## 📂 Project Structure
+## 📋 Prerequisites
 
-```
-Expense-Tracker/
-├── backend/                # Express API server
-│   ├── src/
-│   │   ├── models/        # Mongoose schemas (User, Transaction, Budget)
-│   │   └── routes/        # API routes (auth, transactions, budgets, chat)
-│   ├── .env.example
-│   ├── package.json
-│   └── server.js
-├── frontend/               # React Vite app
-│   ├── src/
-│   │   ├── components/    # React components (Dashboard, Chat, etc.)
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── .env.example
-│   ├── package.json
-│   └── vite.config.js
-└── README.md
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or higher)
+- MongoDB (v4.4 or higher)
+- npm or yarn package manager
+
+## 🚀 Quick Start
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/imranpreet/expense.git
+cd expense
 ```
 
----
-
-## ⚡ Quick Start
-
-### Prerequisites
-- Node.js (v16+)
-- MongoDB Atlas account or local MongoDB
-- (Optional) OpenAI API key for enhanced AI responses
-
-### 1️⃣ Backend Setup
+### 2. Setup Backend
 
 ```bash
 cd backend
 npm install
-
-# Create .env file
-cp .env.example .env
-# Edit .env and add your MONGO_URI and JWT_SECRET
 ```
 
-**Required Environment Variables (`.env`):**
+Create a `.env` file in the `backend` directory:
 ```env
-MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/expense-db
-JWT_SECRET=your_secret_key_here
 PORT=4000
-
-# Optional: For AI-powered responses
-OPENAI_API_KEY=sk-...
+MONGODB_URI=mongodb://localhost:27017/expense-tracker
+JWT_SECRET=your_secret_key_here_change_this_in_production
 ```
 
-**Start the backend:**
+Start the backend server:
 ```bash
-npm run dev
+node server.js
 ```
-Backend will run at `http://localhost:4000`
 
-### 2️⃣ Frontend Setup
+The backend will run on `http://localhost:4000`
+
+### 3. Setup Frontend
 
 ```bash
-cd frontend
+cd ../frontend
 npm install
-
-# (Optional) Create .env if backend is not on localhost:4000
-cp .env.example .env
-# Add: VITE_API_BASE=http://localhost:4000
 ```
 
-**Start the frontend:**
+Start the frontend development server:
 ```bash
 npm run dev
 ```
-Frontend will run at `http://localhost:3000` (or next available port)
 
----
+The frontend will run on `http://localhost:3000`
 
-## 🔌 API Endpoints
+### 4. Access the Application
+
+Open your browser and visit: `http://localhost:3000`
+
+**Test Credentials:**
+- Email: `test@test.com`
+- Password: `123456`
+
+## 📁 Project Structure
+
+```
+expense-tracker/
+├── backend/
+│   ├── src/
+│   │   ├── models/           # MongoDB models
+│   │   │   ├── User.js
+│   │   │   ├── Transaction.js
+│   │   │   ├── Budget.js
+│   │   │   └── SavingsGoal.js
+│   │   └── routes/           # API routes
+│   │       ├── auth.js
+│   │       ├── transactions.js
+│   │       ├── budgets.js
+│   │       ├── savingsGoals.js
+│   │       └── chat.js
+│   ├── server.js             # Express app setup
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/       # React components
+│   │   │   ├── LandingPage.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Budget.jsx
+│   │   │   ├── SavingsGoal.jsx
+│   │   │   ├── Chat.jsx
+│   │   │   ├── Settings.jsx
+│   │   │   └── Navbar.jsx
+│   │   ├── App.jsx           # Main app component
+│   │   ├── index.css         # Global styles
+│   │   └── main.jsx          # Entry point
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
+│
+└── README.md
+```
+
+## 🎨 Features in Detail
+
+### 1. Dashboard
+- Overview of income and expenses
+- Visual analytics with pie charts and bar graphs
+- Recent transactions list
+- Quick stats (balance, income, expenses)
+
+### 2. Budget Planner
+- Create budgets with custom periods (weekly/monthly/custom)
+- Real-time tracking of spent vs. budget
+- Visual progress bars
+- Smart alerts when nearing limits
+
+### 3. Savings Goals
+- Set savings targets with deadlines
+- Track progress with visual indicators
+- Calculate required monthly savings
+- Motivational progress display
+
+### 4. AI Assistant
+- Get spending insights
+- Ask questions about your finances
+- Receive personalized recommendations
+- Interactive chat interface
+
+### 5. Settings
+- Choose from 18+ currencies
+- Toggle theme (Light/Dark/Auto)
+- Persistent preferences
+- User profile management
+
+## 🎯 API Endpoints
 
 ### Authentication
-- `POST /api/auth/signup` - Create new user account
-- `POST /api/auth/login` - Login with email/password
+- `POST /api/auth/signup` - Register new user
+- `POST /api/auth/login` - Login user
 
 ### Transactions
-- `POST /api/transactions` - Add new transaction
-- `GET /api/transactions/user/:userId` - Get user transactions
+- `GET /api/transactions/user/:userId` - Get all transactions
+- `POST /api/transactions` - Create transaction
 - `PUT /api/transactions/:id` - Update transaction
 - `DELETE /api/transactions/:id` - Delete transaction
 
 ### Budgets
-- `POST /api/budgets` - Set budget for category
-- `GET /api/budgets/user/:userId` - Get user budgets
+- `GET /api/budgets/user/:userId` - Get all budgets
+- `POST /api/budgets` - Create budget
+- `PUT /api/budgets/:id` - Update budget
+- `DELETE /api/budgets/:id` - Delete budget
+
+### Savings Goals
+- `GET /api/savingsGoals/user/:userId` - Get all savings goals
+- `POST /api/savingsGoals` - Create savings goal
+- `PUT /api/savingsGoals/:id` - Update savings goal
+- `DELETE /api/savingsGoals/:id` - Delete savings goal
 
 ### AI Chat
-- `POST /api/chat/query` - Send message to AI assistant
-  ```json
-  {
-    "userId": "user_id_here",
-    "message": "How much did I spend on food this month?"
-  }
-  ```
+- `POST /api/chat` - Send message to AI assistant
 
----
+## 🎨 Color Themes
 
-## 💬 Using the AI Assistant
+### Dark Color Scheme (Default)
+- Food: Dark Red `#DC2626`
+- Transport: Dark Blue `#2563EB`
+- Shopping: Dark Purple `#7C3AED`
+- Entertainment: Dark Orange `#EA580C`
+- Bills: Dark Green `#059669`
+- Healthcare: Dark Pink `#DB2777`
+- Education: Dark Cyan `#0891B2`
+- Other: Dark Slate Gray `#475569`
 
-The chatbot provides **data-driven responses** to avoid hallucinations:
+## 🔧 Configuration
 
-**Basic Mode (No API Key)**
-- Uses rule-based logic with your real transaction data
-- Answers: spending by category, biggest expenses, summaries
-- Example: "You've spent ₹4200 on food so far this month."
+### MongoDB Connection
+Update `MONGODB_URI` in backend `.env` file:
+```env
+MONGODB_URI=mongodb://localhost:27017/expense-tracker
+# Or for MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/expense-tracker
+```
 
-**Enhanced Mode (With OpenAI API Key)**
-- Combines your data with GPT intelligence
-- Natural conversation and personalized advice
-- Financial tips and budget recommendations
+### Port Configuration
+- Backend: Default `4000` (configurable in `.env`)
+- Frontend: Default `3000` (configurable in `vite.config.js`)
 
-**Sample Queries:**
-- "How much did I spend on entertainment this month?"
-- "What's my biggest expense category?"
-- "Show me a spending summary"
-- "Give me a savings tip"
+## 📝 Scripts
 
----
+### Backend
+```bash
+npm start          # Start the server
+node server.js     # Start manually
+```
 
-## 🔐 Security Best Practices
+### Frontend
+```bash
+npm run dev        # Start development server
+npm run build      # Build for production
+npm run preview    # Preview production build
+```
 
-✅ **Environment Variables**: Never commit `.env` files  
-✅ **JWT Authentication**: Secure token-based auth  
-✅ **Data Privacy**: AI responses use only your data  
-✅ **Password Hashing**: bcryptjs for secure storage  
+## 🐛 Troubleshooting
 
----
+### MongoDB Connection Issues
+```bash
+# Check if MongoDB is running
+sudo systemctl status mongod
 
-## 🚢 Deployment
+# Start MongoDB
+sudo systemctl start mongod
+```
 
-### Backend (Render / Railway / Google Cloud)
-1. Create new web service
-2. Connect GitHub repo
-3. Set environment variables (MONGO_URI, JWT_SECRET, OPENAI_API_KEY)
-4. Deploy from `backend/` folder
+### Port Already in Use
+```bash
+# Kill process on port 3000
+lsof -i :3000
+kill -9 <PID>
 
-### Frontend (Vercel / Netlify)
-1. Create new site
-2. Set build command: `npm run build`
-3. Set publish directory: `dist`
-4. Add env variable: `VITE_API_BASE=<your-backend-url>`
+# Kill process on port 4000
+lsof -i :4000
+kill -9 <PID>
+```
 
----
-
-## 🎯 Future Enhancements
-
-- 🎤 Voice assistant integration
-- 📈 Predictive spending alerts
-- 🏷️ Smart auto-categorization
-- 📊 Advanced data visualization (Recharts integration)
-- 🎯 Goal-based savings automation
-- 📧 Email notifications for budget limits
-
----
-
-## 📝 Notes
-
-- The app uses a **dummy userId** stored in localStorage for demo purposes
-- For production, implement proper authentication middleware
-- AI responses are based on real user data to ensure accuracy
-- Without an OpenAI API key, the chatbot uses basic rule-based responses
-
----
+### Dependencies Issues
+```bash
+# Clear npm cache and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
 
 ## 🤝 Contributing
 
-This project was built as a full-stack demonstration of React + Node.js + MongoDB + AI integration.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
----
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📄 License
 
-MIT License - Feel free to use this project for learning and development.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Imran Preet**
+- GitHub: [@imranpreet](https://github.com/imranpreet)
+
+## 🙏 Acknowledgments
+
+- React.js team for the amazing framework
+- Tailwind CSS for the utility-first CSS framework
+- Recharts for beautiful chart components
+- MongoDB for the flexible database solution
+- All open-source contributors
+
+## 📞 Support
+
+If you have any questions or need help, please open an issue on GitHub.
 
 ---
 
-**Built with ❤️ using React, Node.js, MongoDB, and OpenAI**
+Made with ❤️ by Imran Preet
