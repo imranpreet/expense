@@ -1,0 +1,36 @@
+services:
+  # 📡 Backend Web Service (Node.js API)
+  - type: web
+    name: expense-tracker-backend
+    runtime: node
+    plan: starter # Free plan is available but standard config uses 'starter' or defaults to free if plan is omitted.
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        sync: false # Render will prompt you to enter your MongoDB connection string
+      - key: JWT_SECRET
+        generateValue: true # Render will automatically generate a secure 256-bit random key
+      - key: PORT
+        value: 10000
+
+  # 🎨 Frontend Static Site (React/Vite App)
+  - type: web
+    name: expense-tracker-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    headers:
+      - path: /*
+        headers:
+          - key: Cache-Control
+            value: no-cache
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_BASE
+        sync: false # Render will prompt you for this. Paste the URL of your backend (e.g. https://expense-tracker-backend.onrender.com)

@@ -24,6 +24,10 @@ app.use('/api/budgets', budgetRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/savings-goals', savingsGoalRoutes);
 
+app.get('/', (req, res) => {
+  res.json({ status: "success", message: "Backend is running successfully!" });
+});
+
 async function start() {
   const mongoUri = process.env.MONGO_URI;
   if (!mongoUri) {
